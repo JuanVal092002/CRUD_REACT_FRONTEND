@@ -20,7 +20,7 @@ class App extends React.Component {
   }
 
   fetchData = async () => {
-    const response = await fetch('http://localhost/ApiRestPhp/index.php');
+    const response = await fetch('http://localhost/ApiRestPhp_CRUD_REACT/index.php');
     const data = await response.json();
     this.setState({ data });
   };
@@ -56,7 +56,7 @@ class App extends React.Component {
       swal("Campos vacíos", "Por favor completa todos los campos", "error");
       return;
     }
-    await fetch('http://localhost/ApiRestPhp/index.php', {
+    await fetch('http://localhost/ApiRestPhp_CRUD_REACT/index.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ class App extends React.Component {
       swal("Campos vacíos", "Por favor completa todos los campos", "error");
       return;
     }
-    await fetch('http://localhost/ApiRestPhp/index.php', {
+    await fetch('http://localhost/ApiRestPhp_CRUD_REACT/index.php', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ class App extends React.Component {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`http://localhost/ApiRestPhp/index.php?id=${dato.id}`, {
+        fetch(`http://localhost/ApiRestPhp_CRUD_REACT/index.php?id=${dato.id}`, {
           method: 'DELETE',
         }).then(() => {
           this.fetchData();
